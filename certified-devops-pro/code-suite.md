@@ -32,6 +32,8 @@ ___
 
 Acciones el mismo action group se ejecutan en paralelo.
 
+Acciones con el mismo runOrder se ejecutan en paralelo.
+
 
 # CodeBuild
 
