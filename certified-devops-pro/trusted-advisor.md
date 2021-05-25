@@ -11,3 +11,7 @@ Requiere Premium Support (Business Enterprise)
 ## Event Bridge 
 
 Puede capturar check item refresh status event en cloudwatch event
+
+## Notificaciones automatizadas
+
+Son una vez por semana.
