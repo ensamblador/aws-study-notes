@@ -1,5 +1,7 @@
 # ECS
 
+ECS puedes ser target directo de Cloudwatch event rule a nivel de Task.
+
 ## ECS Agent
 
 Viene instalado en AMI Optimizadas para ECS, se puede instalar en EC2 (AL, Ubuntu, Windows).

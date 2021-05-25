@@ -10,6 +10,10 @@
 
 ## [Config](config.md)
 
+## [Systems Manager](systems-manager.md)
+
+## [Trusted Advisor](trusted-advisor.md)
+
 ## [Code Suite](code-suite.md)
 
 

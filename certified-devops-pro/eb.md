@@ -1,7 +1,6 @@
 # Elastic Beanstalk
 
 
-
 ## Language support
 
 - Languages: Go / Java / PHP / Nodejs /Python  / Ruby 
@@ -74,3 +73,12 @@ Usar V2 para multicontainer.
         - eb status
         - eb events
     - eb deploy
+
+
+## RDS Decoupling
+
+Hay que Conectarse de Forma externa, una manera es:
+1. Tomar un snapshot de la RDS y habilitar deletion protection+
+2. Configurar un nuevo env y conectarse a la RDS
+3. Desasociar el SG del Env original
+4. Borrar el env original.

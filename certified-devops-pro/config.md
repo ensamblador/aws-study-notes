@@ -2,17 +2,24 @@
 
 ## Rules
 - Managed By Config
-- Lambdaso
+- Lambda
 
 ### Trigger
 - Configuration changes (All, resource, Tags)
 - Periodic (1,3,6,12,24H)
+
+
 
 ## Remeditation
 
 <div style='border:1px solid gray; padding:10px'>
 AWS System Manager Automation
 </div>
+
+## Notificaciones 
+
+Se puede establecer configuration change, compliance change, etc. En Cloudwatch events
+Tambien se puede desde config notificar a un SNS Topic a nivel de cuenta (no a nivel de regla)
 
 ### Configuration Timeline
 
