@@ -2,6 +2,8 @@
 
 ## Snapshots
 
+Automated snapshots cannot be shared. Only manual snapshots
+
 ### Copia a otra región
 
 > - Hasta 5 snapshot copy request por region / account.
@@ -42,6 +44,23 @@ No se copian, deben existir en la región de destino (recomendado con los mismos
 > - Promote read replica to standalone DB.
 
 
+## IAM DB Access
+
+Permite establecer accesos a través de IAM Roles en vez de contraseñas.
+Funciona con Aurora (MySQL PostgreSQL) y RDS MySQL
 
 
+## Aurora Global Database
 
+- Global Read, Local Latenci
+- Scalable Secondary
+- PostgreSQL y MySQL
+- Fast Replication Lower RPO, RTO
+
+
+## Aurora Multi Master
+- En el cluster hay varios writers y se replican todos contra todos (Mesh)
+- Todas en la misma region
+- No se puede habilitar cross-region replicas
+- No tiene integración con otros sevicios de AWS como Lambda, S3, IAM
+- No se puede habilitar el clonado, backtrack

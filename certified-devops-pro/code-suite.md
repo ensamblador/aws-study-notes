@@ -27,6 +27,22 @@ Existen alternativas de **Stop Deployment** y **Stop And Rollback Deployment**
     - OS: Ubuntu, Windows, RHEL (with Sudo/ Root access)
     - Port : 443
     - IAM Identity with permissions.
+
+## Rollback Behavior with existing content
+
+Como parte del proceso de despliegue, CodeDeploy Remueve de la instancia todos los archivos instalados en el despliegue más reciente. Si aparecen archivos que no son parte del deploy en el ambiente del destino puedes elegir como CodeDeploy reacciona:
+
+- Fallar el displiegue
+- Sobrescribir el contenido
+- Retener el contenido: Detecta y se mantienen los archivos en el destino y forman parte del paquete de despliegue.
+
+
+
+
+
+
+
+
 ___
 # CodePipeline
 
@@ -34,7 +50,7 @@ Acciones el mismo action group se ejecutan en paralelo.
 
 Acciones con el mismo runOrder se ejecutan en paralelo.
 
-
+___
 # CodeBuild
 
 ## Environtment Variables:
@@ -87,7 +103,7 @@ Se pueden crear reglas de aprobación, sin estas aprobaciones no se puede hacer 
 
 ## Notificaciones
     FULL o BASIC
-    Targets: SNS o ChatBot
+    Targets: SNS (debe estar en la misma región el topic)o ChatBot
     Eventos: 
         Comments / Approvals / Pull Requests
         Delete / Create / Update Branch
