@@ -3,6 +3,7 @@
 ## General:
 - Cuando se pasa una AMI como *Parameter* se debe limitar a AWS::EC2::Image::Id
 - Cuando una BD RDS se debe borrar o actualizar se puede pasar el DBSnapshotIdentifier = ARN del Snapshot Manual.
+- `list-stacks` permite ver los stacks que se han borrado en los últimos 90 días también.
 
 ## SSM::Parameter en Parameter section
 
@@ -45,3 +46,13 @@ Previene la actualización de recursos usando una política de Stack (Json)
 
 ## Custom Resources
 - Es la forma de incorporar custom resources a Cloud Formation Stack.
+
+
+## Intrinsic Functions
+
+Se puede usar en 
+* Resource Properties
+* outputs
+* metedata attributes
+* update policy attributes
+* tambien para crear stack resources

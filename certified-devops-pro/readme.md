@@ -14,6 +14,8 @@
 
 ## [Systems Manager](systems-manager.md)
 
+## [Service Catalog](service-catalog.md)
+
 
 
 # Monitoring
@@ -40,6 +42,8 @@
 
 # Compute / application
 
+## [API Gaateway](apigateway.md)
+
 ## [SQS SNS](sqs-sns.md)
 
 ## [Lambda](lambda.md)
@@ -56,6 +60,7 @@
 
 ## [Security](seguridad.md)
 
+## [IAM](iam.md)
 
 # Migracion
 

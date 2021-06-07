@@ -29,7 +29,9 @@ Tambien se puede desde config notificar a un SNS Topic a nivel de cuenta (no a n
 
     Todos los cambios de compliance
 
-## Algunas reglas
+## Algunas reglas administradas
 - Restricted SSH: Verifica si los SG Permiten el acceso sin restricciones
 - Restricted-common-ports: Verifica sin los SG permiten el acceso sin restricciones en los puertos más comunes.
 - approved-amis-by-id, approved-amis-by-tag: SI las AMI que usa EC2 están aprobadas.
+- cloudformation-stack-drift-detection-check 
+- secretsmanager-rotation-enabled-check 

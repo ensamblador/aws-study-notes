@@ -26,3 +26,46 @@ Otra alternativa es reiniciar el container agent:
 
 
 **`sudo systemctl restart ecs`**
+
+
+## Uso de secrets
+
+### Secrets Manager
+
+Es posible usar secret manager pasando como valor en el campo Secrets
+
+```json 
+{
+  "containerDefinitions": [{
+    "secrets": [{
+      "name": "environment_variable_name",
+      "valueFrom": "arn:aws:secretsmanager:region:aws_account_id:secret:appauthexample-AbCdEf:username1::"
+    }]
+  }]
+}
+```
+
+### Parameter Store
+
+```json
+{
+  "containerDefinitions": [{
+    "secrets": [{
+      "name": "environment_variable_name",
+      "valueFrom": "arn:aws:ssm:region:aws_account_id:parameter/parameter_name"
+    }]
+  }]
+}
+```
+    
+
+
+### Container Agent
+
+* Instalado automaticamente en ECS-Optimized AMI
+* Se puede instalar en otras AMI
+* Viene instalado y administrado por AWS en caso de Fargate Launch Type
+
+
+### Cloudwatch Logs
+

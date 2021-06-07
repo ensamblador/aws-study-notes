@@ -32,8 +32,10 @@ Para que cloudwatch pueda detectar API Calls, primero se debe habilitar cloudtra
 ### Puede crear un subscription filter
 - Elasticsearch
 - Lambda
-- Kinesis Firehose
-- Kinesis Stream
+- Kinesis Firehose (cross account)
+- Kinesis Stream (cross account)
+
+
 
 
 ### Puede crear un metric filter
@@ -47,5 +49,7 @@ Puede crear una métrica a partir de un filtro (ejemplo error 404)
 `put-metric-data --storage-resolution` indica la resolución de la data (1s, 60s, etc)
 `statistical-values`indica los valores agregados inmediatamente (no los calcula cw)
 
+# Dashboards
 
+Puede tener un dashboard único y ver todas las regiones ahí.
 

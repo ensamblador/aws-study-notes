@@ -64,3 +64,19 @@ Funciona con Aurora (MySQL PostgreSQL) y RDS MySQL
 - No se puede habilitar cross-region replicas
 - No tiene integración con otros sevicios de AWS como Lambda, S3, IAM
 - No se puede habilitar el clonado, backtrack
+
+
+## Aurora Replicas (cluster)
+
+- Hasta 15 Replicas
+- Automatic Failover
+- Se distribuyen en distintas AZ
+- Replica Lag < 100ms
+
+Para crear un reader => add Reader (en la consola)
+
+## Aurora Read Replicas
+
+- Usa Binglog replication
+- Hasta 5 RR
+- Puede ser en otra región

@@ -50,8 +50,40 @@ Acciones el mismo action group se ejecutan en paralelo.
 
 Acciones con el mismo runOrder se ejecutan en paralelo.
 
+## Actions
+
+
+Action Type | Alternativas 
+-- | --
+Source | - ECR (se debe usar como accion paralela con con code commit) <br> - S3 <br> - Github, Bitbucket, Code commit
+Build | - Codebuild <br> - Cloubees <br> - Jenkins <br> - Teamcity
+Test | - CodeBuild <br> - AWS Device Farm <br> - Blazemeeter <br> - Ghost Inspector <br> - MicroFocus SotormRunner Load <br> - Nouvola <br> - Runscope 
+Deploy | - S3 <br> - AWS AppConfig <br> - Cloudformation <br> - Cloudformation StackSets <br> - ECS <br> - Elastic Beanstalk <br> - Opsworks <br> - Service Catalog <br> - Alexa Skills Kit <br> - Code Deploy <br> - XebiaLabs 
+Approvals | - SNS 
+Invoke | - Lambda <br> - Step Functions 
+ 
+
 ___
 # CodeBuild
+
+## Buildspac.yml
+
+-  env: Environment variables pueden ser variables de shell, parameter-store, exported-variables, secrets manager
+- proxy
+- batch
+- phases
+    - Install
+    - pre_build
+    - build
+        (todas tienen la misma structura)
+        - run-as
+        - on-failure
+        - commands
+        - finally
+    - post_build
+- reports
+- artifacts
+- cache
 
 ## Environtment Variables:
     - Plain Text

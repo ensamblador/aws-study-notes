@@ -44,14 +44,14 @@ Auto Heal: descansa en ELB y ASG.
 
 
 ### .ebextensions config file structure
-- packages
+- packages: yum, rubygems, python, rpm (el orden dentro de un package manager no está garantizado)
 - groups
 - users
+- sources : para descargar un archivo y descomprimirlo
 - files
-- sources
-- commands
-- services
-- container_commands (leader_only:BOOL)
+- commands: comandos que se ejecutan antes de que la aplicacion y el servidor estén configurados. Corren como root, en orden alfabético.
+- services: servicios que se deben correr
+- container_commands (leader_only:BOOL): corren antes de que se despliegue la aplicación pero después de la extracción y configuración.
 
 ### dockerrun.aws.json
 
@@ -82,3 +82,9 @@ Hay que Conectarse de Forma externa, una manera es:
 2. Configurar un nuevo env y conectarse a la RDS
 3. Desasociar el SG del Env original
 4. Borrar el env original.
+
+
+## Managed Updates
+
+- No downtimes or reduced Capacity
+- Configurable maintenance window

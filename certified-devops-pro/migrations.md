@@ -19,3 +19,14 @@ _aws cli comandos para exportar OVA, VMWare o Hyper-V_ 👇
 aws ec2 start-export-task
 aws ec2 export-image
 ```
+
+
+
+# Server Migration Service
+
+* From: 
+  - VMWare vSphere
+  - Hyper-V SCVMM
+  - Azure
+
+Incrementalmente replcia las VMs como API listas para desplegar en EC2. 
