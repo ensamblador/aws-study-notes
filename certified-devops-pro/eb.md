@@ -21,6 +21,8 @@ SNS para notificaciones y manejo de eventos.
 
 Auto Heal: descansa en ELB y ASG.
 
+Persisten Store: Las instancias no tienen persistencia de data, se debe configurar la aplicación para almacenar datos persistentes fuera del env (ej S3, EFS, DynamoDB, RDS)
+
 ## Deployments
 - Blue/Green: Swap-URL, hay que Desacoplar BBDD, ojo con el TTL.
 - All at Once
@@ -35,13 +37,19 @@ Auto Heal: descansa en ELB y ASG.
             |-- *.config
         |--.elasticbeanstalk
             |-- saved_configs
-            |--config.yaml
+            |-- config.yaml
         |app-files  
 
 **_ebextensions_**: JSON o YAML files, Comandos shell o de aplicacióm. Se ejecutan en orden alfabético.<br>
 
 **_saved_config_**: configuración del environment, si se requiere reutilizar la configuración.
 
+### Source Code Bundle
+
+- puede incluir un cron.yaml para programar periódicamente
+- No debe exeder 512 MB
+- zip o war file
+- no incluir directorios superiores (parent)
 
 ### .ebextensions config file structure
 - packages: yum, rubygems, python, rpm (el orden dentro de un package manager no está garantizado)
@@ -88,3 +96,8 @@ Hay que Conectarse de Forma externa, una manera es:
 
 - No downtimes or reduced Capacity
 - Configurable maintenance window
+
+
+## [Aplication Version Lifecycle](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-lifecycle.html)
+
+Dado que las versiones de las aplicaciones no pueden ser más de 1000, es posible configurar una política de ciclo de vida de aplicación para borrar las versiones después de un cierto umbral o después de cierta antigüedad.

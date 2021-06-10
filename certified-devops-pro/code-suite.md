@@ -39,10 +39,6 @@ Como parte del proceso de despliegue, CodeDeploy Remueve de la instancia todos l
 
 
 
-
-
-
-
 ___
 # CodePipeline
 
@@ -90,9 +86,18 @@ ___
     - Parameter
     - Secrets Manager
 
+
+
 ## Custom Image: 
 
 Es posible usar una imagen custom, tiene que estar en ECR u otro registro.
+
+    - ECR
+        - Same account
+        - Other account
+
+    - Other Registry (docker hub por ejemplo)
+
 
 ## Docker Images de CodeBuild:
     - AmazonLinux 2 x86_64
@@ -152,16 +157,24 @@ También se pueden crear Event Rules con eventos diferents.
 ## IAM Stuff:
 Para permisos granulares por repo, rama:
 
+```json
     "StringEqualsIfExists": {
         "CodeCommit:References":[
             refs/head/main,
             refs/head/prod
         ]
     } 
+```
+
 
 **AWSCodeCommitFullAccess**: Administrador
 **AWSCodeCommitPowerUser**: Most Users
 **AWSCodeCommitReadOnly**: Solo Lectura
+
+
+### Para los permisos por tags
+
+Es posible utilizar tags en los statements.
 
 
 # CodePipeline
@@ -175,6 +188,6 @@ Build Stage:
 # Codestar
 
 - Crea todo (CCommit, CBuild, CPipeline, CDeploy)
-- ElasticBeanstal, EC2, Lambda
+- Elastic Beanstalk, EC2, Lambda
 - Team (owner, viewer, contributor)
 - Jira Connector For ticket System
